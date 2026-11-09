@@ -1,7 +1,7 @@
 package my.aircraftmvn;
 
 
-import my.aircraftmvn.models.aircrafts.*;
+import my.aircraftmvn.models.aircrafts.Aircraft;
 
 /**
  * OLIO-OHJELMOINTI II

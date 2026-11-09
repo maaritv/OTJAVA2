@@ -48,16 +48,9 @@ public class Aircraft implements Cloneable {
 
     // Deep copy (custom implementation)
     public Aircraft copy() {
-        BlackBox newBlackBox = new BlackBox(this.blackBox.getData(), (Date) this.blackBox.getCreated().clone());
+        BlackBox newBlackBox = this.blackBox.copy();
         Aircraft newAircraft = new Aircraft(this.aircraftType, this.maxNumberOfPassengers);
         newAircraft.setBlackBox(newBlackBox);
-        return newAircraft;
-    }
-
-    public Aircraft copyf() throws CloneNotSupportedException {
-        BlackBox clonedBlackBox = (BlackBox) this.blackBox.clone();
-        Aircraft newAircraft = new Aircraft(this.aircraftType, this.maxNumberOfPassengers);
-        newAircraft.setBlackBox(clonedBlackBox);
         return newAircraft;
     }
 

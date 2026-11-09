@@ -12,6 +12,11 @@ public class BlackBox implements Cloneable {
         this.created = created;
     }
 
+    public BlackBox copy(){
+        BlackBox copy = new BlackBox(this.data, new Date(this.created.getTime()));
+        return copy;
+    }
+
     // Getters and Setters
     public String getData() {
         return data;

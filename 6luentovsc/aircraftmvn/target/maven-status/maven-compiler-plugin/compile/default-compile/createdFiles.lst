@@ -1,0 +1,7 @@
+models/aircrafts/Flight.class
+models/aircrafts/Aircraft.class
+models/library/Genre.class
+models/aircrafts/Airport.class
+models/library/Author.class
+models/aircrafts/BlackBox.class
+models/library/Book.class
