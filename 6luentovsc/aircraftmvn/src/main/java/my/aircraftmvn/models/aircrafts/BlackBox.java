@@ -5,6 +5,7 @@ import java.util.Date;
 public class BlackBox implements Cloneable {
     private String data;
     private Date created;
+    private Date initialized;
 
     // Constructor
     public BlackBox(String data, Date created) {
@@ -41,6 +42,12 @@ public class BlackBox implements Cloneable {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    public BlackBox copy(){
+        BlackBox copy = new BlackBox(this.data, new Date(this.created.getTime()));
+        copy.initialized=new Date(this.initialized.getTime());
+        return copy;
     }
 }
 

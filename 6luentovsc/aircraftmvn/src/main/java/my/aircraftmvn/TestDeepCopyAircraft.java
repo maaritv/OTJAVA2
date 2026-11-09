@@ -11,6 +11,7 @@ public class TestDeepCopyAircraft {
 
     public static void main (String[] args) throws CloneNotSupportedException {
         Aircraft first = new Aircraft("Boeing 737", 500);
+        first.setProductionYear(2000);
         System.out.println("First when created\t"+first.toString());
         Aircraft second = first.copy();
 

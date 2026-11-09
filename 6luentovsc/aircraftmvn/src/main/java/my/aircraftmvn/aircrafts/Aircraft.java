@@ -48,8 +48,8 @@ public class Aircraft implements Cloneable {
 
     // Deep copy (custom implementation)
     public Aircraft copy() {
-        BlackBox newBlackBox = this.blackBox.copy();
         Aircraft newAircraft = new Aircraft(this.aircraftType, this.maxNumberOfPassengers);
+        BlackBox newBlackBox = this.blackBox.copy();
         newAircraft.setBlackBox(newBlackBox);
         return newAircraft;
     }

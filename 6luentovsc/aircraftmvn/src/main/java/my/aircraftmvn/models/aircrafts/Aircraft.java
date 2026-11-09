@@ -6,6 +6,7 @@ public class Aircraft implements Cloneable {
     // Private member variables
     private String aircraftType;
     private int maxNumberOfPassengers;
+    private Integer productionYear;
     private BlackBox blackBox;
 
     // Constructor
@@ -15,6 +16,10 @@ public class Aircraft implements Cloneable {
         this.blackBox=new BlackBox("", new Date());
     }
 
+    public Aircraft(){
+
+    }
+
     // Getters and Setters
     public String getAircraftType() {
         return aircraftType;
@@ -22,6 +27,14 @@ public class Aircraft implements Cloneable {
 
     public void setAircraftType(String aircraftType) {
         this.aircraftType = aircraftType;
+    }
+
+    public void setProductionYear(Integer productionYear){
+        this.productionYear=productionYear;
+    }
+
+    public Integer getProductionYear(){
+        return this.productionYear;
     }
 
     public int getMaxNumberOfPassengers() {
@@ -48,8 +61,11 @@ public class Aircraft implements Cloneable {
 
     // Deep copy (custom implementation)
     public Aircraft copy() {
-        BlackBox newBlackBox = new BlackBox(this.blackBox.getData(), (Date) this.blackBox.getCreated().clone());
-        Aircraft newAircraft = new Aircraft(this.aircraftType, this.maxNumberOfPassengers);
+        Aircraft newAircraft = new Aircraft();
+        newAircraft.aircraftType=this.aircraftType;
+        newAircraft.maxNumberOfPassengers=this.maxNumberOfPassengers;
+        newAircraft.productionYear=this.productionYear;
+        BlackBox newBlackBox = this.blackBox.copy();
         newAircraft.setBlackBox(newBlackBox);
         return newAircraft;
     }
